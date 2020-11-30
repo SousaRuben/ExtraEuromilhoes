@@ -143,6 +143,8 @@
                 var Button = new System.Windows.Forms.Button();
                 Button.Name = $"btnEstrela{i}";
                 Button.Text = $"{i}";
+
+                Button.Click += BtnEstrela_Click;
                 Container.Controls.Add(Button);
             }
 

@@ -26,5 +26,12 @@ namespace ExtraEuroMilhoes
             var Container = btn.Parent.Parent;
             Debug.WriteLine($"Click {btn.Name} inside {Container.Name}");
         }
+
+        private void BtnEstrela_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            var Container = btn.Parent.Parent;
+            Debug.WriteLine($"Click {btn.Name} inside {Container.Name}");
+        }
     }
 }
