@@ -89,10 +89,18 @@
                 Container.Name = $"Container{i}";
                 Container.AutoSize = true;
                 Container.BackColor = System.Drawing.Color.Red;
+                Container.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+
 
                 var Principais = ContainerPrincipais();
-
+                Principais.Name = $"ContainerPrincipais{i}";
                 Container.Controls.Add(Principais);
+
+
+                var Estrelas = ContainerEstrelas();
+                Estrelas.Name = $"ContainerEstrelas{i}";
+                Container.Controls.Add(Estrelas);
+
                 flowUp.Controls.Add(Container);
             }
 
@@ -120,6 +128,26 @@
             return Container;
         }
 
+
+        /// <summary>
+        /// Cria um container com as estrelas da sorte
+        /// </summary>
+        private System.Windows.Forms.TableLayoutPanel ContainerEstrelas()
+        {
+            var Container = new System.Windows.Forms.TableLayoutPanel();
+            Container.ColumnCount = 3;
+            Container.AutoSize = true;
+
+            for (int i = 1; i <= 12; i++)
+            {
+                var Button = new System.Windows.Forms.Button();
+                Button.Name = $"btnEstrela{i}";
+                Button.Text = $"{i}";
+                Container.Controls.Add(Button);
+            }
+
+            return Container;
+        }
 
         private System.Windows.Forms.FlowLayoutPanel flowMain;
         private System.Windows.Forms.FlowLayoutPanel flowUp;
