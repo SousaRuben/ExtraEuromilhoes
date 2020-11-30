@@ -15,6 +15,7 @@ namespace ExtraEuroMilhoes
         public Form1()
         {
             InitializeComponent();
+            InitializeContainers();
         }
     }
 }
