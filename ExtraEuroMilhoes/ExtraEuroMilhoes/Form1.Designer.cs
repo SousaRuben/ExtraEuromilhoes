@@ -97,7 +97,8 @@
                 var Container = new System.Windows.Forms.FlowLayoutPanel();
                 Container.Name = $"Container{i}";
                 Container.AutoSize = true;
-                Container.BackColor = System.Drawing.Color.Red;
+                Container.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                
                 Container.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 
 
@@ -130,6 +131,10 @@
                 Button.Text = $"{i}";
                 Button.Width = 30;
 
+                Button.ForeColor = System.Drawing.Color.Red;
+                Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                Button.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+
                 Button.Click += BtnPrincipal_Click;
                 Container.Controls.Add(Button);
             }
@@ -151,6 +156,17 @@
                 var Button = new System.Windows.Forms.Button();
                 Button.Name = $"btnEstrela{i}";
                 Button.Text = $"{i}";
+
+                Button.Margin = new System.Windows.Forms.Padding(20, 5, 20, 5);
+
+                Button.BackColor = System.Drawing.Color.Transparent;
+                Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                Button.FlatAppearance.BorderSize = 0;
+
+                Button.BackgroundImage = ExtraEuroMilhoes.Properties.Resources.star;
+                Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+
+                Button.Size = Button.BackgroundImage.Size;
 
                 Button.Click += BtnEstrela_Click;
                 Container.Controls.Add(Button);
