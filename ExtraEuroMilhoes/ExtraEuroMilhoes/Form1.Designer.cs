@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.flowMain = new System.Windows.Forms.FlowLayoutPanel();
             this.flowUp = new System.Windows.Forms.FlowLayoutPanel();
             this.flowDown = new System.Windows.Forms.FlowLayoutPanel();
@@ -36,28 +37,32 @@
             // 
             // flowMain
             // 
+            this.flowMain.AutoSize = true;
             this.flowMain.Controls.Add(this.flowUp);
             this.flowMain.Controls.Add(this.flowDown);
             this.flowMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowMain.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowMain.Location = new System.Drawing.Point(0, 0);
             this.flowMain.Name = "flowMain";
-            this.flowMain.Size = new System.Drawing.Size(818, 571);
+            this.flowMain.Size = new System.Drawing.Size(815, 571);
             this.flowMain.TabIndex = 0;
             // 
             // flowUp
             // 
+            this.flowUp.AutoScroll = true;
             this.flowUp.AutoSize = true;
-            this.flowUp.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowUp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowUp.Location = new System.Drawing.Point(3, 3);
+            this.flowUp.MinimumSize = new System.Drawing.Size(500, 200);
             this.flowUp.Name = "flowUp";
-            this.flowUp.Size = new System.Drawing.Size(0, 0);
+            this.flowUp.Size = new System.Drawing.Size(803, 200);
             this.flowUp.TabIndex = 0;
+            this.flowUp.WrapContents = false;
             // 
             // flowDown
             // 
             this.flowDown.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowDown.Location = new System.Drawing.Point(3, 9);
+            this.flowDown.Location = new System.Drawing.Point(3, 209);
             this.flowDown.Name = "flowDown";
             this.flowDown.Size = new System.Drawing.Size(803, 213);
             this.flowDown.TabIndex = 1;
@@ -66,13 +71,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 571);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(815, 571);
             this.Controls.Add(this.flowMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Euromilhoes";
             this.flowMain.ResumeLayout(false);
             this.flowMain.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -127,7 +136,6 @@
 
             return Container;
         }
-
 
         /// <summary>
         /// Cria um container com as estrelas da sorte
