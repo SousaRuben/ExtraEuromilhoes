@@ -103,8 +103,6 @@
 
                 flowUp.Controls.Add(Container);
             }
-
-            System.Diagnostics.Debug.WriteLine(flowUp.Controls.Count);
         }
 
         /// <summary>
@@ -122,6 +120,8 @@
                 Button.Name = $"btnPrincipal{i}";
                 Button.Text = $"{i}";
                 Button.Width = 30;
+
+                Button.Click += BtnPrincipal_Click;
                 Container.Controls.Add(Button);
             }
 
