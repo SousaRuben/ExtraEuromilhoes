@@ -28,9 +28,10 @@ namespace ExtraEuroMilhoes
             lblValor.Text = $"Valor total da aposta: {value}";
         }
 
-        private void calcularAposta(Principais container)
+        private void calcularAposta(Aposta aposta)
         {
- 
+            float preco = aposta.calcularPreco();
+            displayTotal(preco);
         }
 
         private void BtnPrincipal_Click(object sender, EventArgs e)
@@ -43,13 +44,10 @@ namespace ExtraEuroMilhoes
             int.TryParse(btn.Text, out value);
             btn.Selected = !btn.Selected;
 
-            if (btn.Selected)
-            {
-                aposta.Principais.Add(value);
-                return;
-            }
+            if (btn.Selected) aposta.Principais.Add(value); 
+            else aposta.Principais.Remove(value);
 
-            aposta.Principais.Remove(value);
+            calcularAposta(aposta);
         }
 
         private void BtnEstrela_Click(object sender, EventArgs e)
@@ -62,13 +60,10 @@ namespace ExtraEuroMilhoes
             int.TryParse(btn.Text, out value);
             btn.Selected = !btn.Selected;
 
-            if (btn.Selected)
-            {
-                aposta.Estrelas.Add(value);
-                return;
-            }
+            if (btn.Selected) aposta.Estrelas.Add(value);
+            else aposta.Estrelas.Remove(value);
 
-            aposta.Estrelas.Remove(value);
+            calcularAposta(aposta);
         }
 
         private void btnApostar_Click(object sender, EventArgs e)

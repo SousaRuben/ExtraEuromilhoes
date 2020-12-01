@@ -9,8 +9,18 @@ namespace ExtraEuroMilhoes
 {
     class Aposta : FlowLayoutPanel
     {
-        private float price = 0;
+        public float price { get; set; }
         public List<int> Principais { get; set; } = new List<int>();
         public List<int> Estrelas { get; set; } = new List<int>();
+
+        public float calcularPreco()
+        {
+            price = 0;
+            if(Principais.Count >= 5 && Estrelas.Count >= 2)
+            {
+                price = 2.50f;
+            }
+            return price;
+        }
     }
 }
