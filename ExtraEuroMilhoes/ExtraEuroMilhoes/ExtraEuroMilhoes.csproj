@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aposta.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="EuroButton.cs">
       <SubType>Component</SubType>
     </Compile>

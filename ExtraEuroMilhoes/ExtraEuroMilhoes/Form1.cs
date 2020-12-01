@@ -14,6 +14,7 @@ namespace ExtraEuroMilhoes
 {
     public partial class Form1 : Form
     {
+        public float total = 0;
         public Form1()
         {
             InitializeComponent();
@@ -22,17 +23,27 @@ namespace ExtraEuroMilhoes
             displayTotal();
         }
 
-        private void displayTotal()
+        private void displayTotal(float value = 0)
         {
-            lblValor.Text = "Valor total da aposta: 0";
+            lblValor.Text = $"Valor total da aposta: {value}";
+        }
+
+        private void calcularAposta(Aposta container)
+        {
+            if(container.Count == 5)
+            {
+                displayTotal(container.Price);
+            }
         }
 
         private void BtnPrincipal_Click(object sender, EventArgs e)
         {
             EuroButton btn = sender as EuroButton;
             btn.Selected = !btn.Selected;
-            var Container = btn.Parent.Parent;
-            Debug.WriteLine($"Click {btn.Name} inside {Container.Name}");
+            Aposta Container = (Aposta) btn.Parent;
+            calcularAposta(Container);
+
+            //Debug.WriteLine($"Click {btn.Name} inside {Container.Name}");
         }
 
         private void BtnEstrela_Click(object sender, EventArgs e)
@@ -40,7 +51,7 @@ namespace ExtraEuroMilhoes
             EuroButton btn = sender as EuroButton;
             btn.Selected = !btn.Selected;
             var Container = btn.Parent.Parent;
-            Debug.WriteLine($"Click {btn.Name} inside {Container.Name}");
+            //Debug.WriteLine($"Click {btn.Name} inside {Container.Name}");
         }
     }
 }
