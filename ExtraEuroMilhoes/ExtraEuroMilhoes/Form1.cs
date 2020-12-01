@@ -39,7 +39,7 @@ namespace ExtraEuroMilhoes
             Principais Container = (Principais) btn.Parent;
             Aposta aposta = (Aposta)Container.Parent;
 
-            int value = 0;
+            int value;
             int.TryParse(btn.Text, out value);
             btn.Selected = !btn.Selected;
 
@@ -55,16 +55,27 @@ namespace ExtraEuroMilhoes
         private void BtnEstrela_Click(object sender, EventArgs e)
         {
             EuroButton btn = sender as EuroButton;
+            var Container = btn.Parent;
+            Aposta aposta = (Aposta)Container.Parent;
+
+            int value;
+            int.TryParse(btn.Text, out value);
             btn.Selected = !btn.Selected;
-            var Container = btn.Parent.Parent;
-            //Debug.WriteLine($"Click {btn.Name} inside {Container.Name}");
+
+            if (btn.Selected)
+            {
+                aposta.Estrelas.Add(value);
+                return;
+            }
+
+            aposta.Estrelas.Remove(value);
         }
 
         private void btnApostar_Click(object sender, EventArgs e)
         {
-            foreach (Aposta item in this.flowUp.Controls)
+            foreach (Aposta item in flowUp.Controls)
             {
-                Debug.WriteLine(item.Principais.Count);
+                Debug.WriteLine($"{item.Principais.Count} - {item.Estrelas.Count}");
             }
         }
     }
