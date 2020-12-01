@@ -9,12 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.IO;
+using ExtraEuroMilhoes.models;
+
 
 namespace ExtraEuroMilhoes
 {
     public partial class Form1 : Form
     {
+        private const string path = "../../data/file.json"; 
         public float total = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -28,7 +35,7 @@ namespace ExtraEuroMilhoes
             lblValor.Text = $"Valor total da aposta: {value}";
         }
 
-        private void calcularTotal()
+        private float calcularTotal()
         {
             total = 0;
             foreach (Aposta aposta in flowUp.Controls)
@@ -36,12 +43,42 @@ namespace ExtraEuroMilhoes
                 total += aposta.price;
             }
             displayTotal(total);
+
+            return total;
         }
 
         private void calcularAposta(Aposta aposta)
         {
             float preco = aposta.calcularPreco();
             if (preco > 0) calcularTotal();
+        }
+
+        private void saveOnFile()
+        {
+            ReciboAposta recibo = new ReciboAposta();
+            recibo.Total = calcularTotal();
+
+            foreach (Aposta item in flowUp.Controls)
+            {
+                if(item.price != 0)
+                {
+                    ModelAposta aposta = new ModelAposta();
+
+                    aposta.price = item.price;
+                    aposta.Principais = item.Principais;
+                    aposta.Estrelas = item.Estrelas;
+
+                    recibo.Apostas.Add(aposta);
+                }
+            }
+
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            
+            string jsonString = JsonSerializer.Serialize(recibo, options);
+            File.WriteAllText(path, jsonString);
         }
 
         private void BtnPrincipal_Click(object sender, EventArgs e)
@@ -78,10 +115,7 @@ namespace ExtraEuroMilhoes
 
         private void btnApostar_Click(object sender, EventArgs e)
         {
-            foreach (Aposta item in flowUp.Controls)
-            {
-                Debug.WriteLine($"{item.Principais.Count} - {item.Estrelas.Count}");
-            }
+            saveOnFile();
         }
     }
 }
