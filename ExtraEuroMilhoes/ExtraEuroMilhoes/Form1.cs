@@ -18,6 +18,13 @@ namespace ExtraEuroMilhoes
         {
             InitializeComponent();
             InitializeContainers();
+
+            displayTotal();
+        }
+
+        private void displayTotal()
+        {
+            lblValor.Text = "Valor total da aposta: 0";
         }
 
         private void BtnPrincipal_Click(object sender, EventArgs e)

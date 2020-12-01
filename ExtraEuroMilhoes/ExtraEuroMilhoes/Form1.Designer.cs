@@ -32,7 +32,13 @@
             this.flowMain = new System.Windows.Forms.FlowLayoutPanel();
             this.flowUp = new System.Windows.Forms.FlowLayoutPanel();
             this.flowDown = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowOptions = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnApostar = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblValor = new System.Windows.Forms.Label();
             this.flowMain.SuspendLayout();
+            this.flowOptions.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowMain
@@ -40,6 +46,7 @@
             this.flowMain.AutoSize = true;
             this.flowMain.Controls.Add(this.flowUp);
             this.flowMain.Controls.Add(this.flowDown);
+            this.flowMain.Controls.Add(this.flowOptions);
             this.flowMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowMain.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowMain.Location = new System.Drawing.Point(0, 0);
@@ -67,6 +74,48 @@
             this.flowDown.Size = new System.Drawing.Size(803, 213);
             this.flowDown.TabIndex = 1;
             // 
+            // flowOptions
+            // 
+            this.flowOptions.AutoSize = true;
+            this.flowOptions.Controls.Add(this.flowLayoutPanel1);
+            this.flowOptions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowOptions.Location = new System.Drawing.Point(3, 428);
+            this.flowOptions.MinimumSize = new System.Drawing.Size(50, 50);
+            this.flowOptions.Name = "flowOptions";
+            this.flowOptions.Size = new System.Drawing.Size(803, 82);
+            this.flowOptions.TabIndex = 2;
+            // 
+            // btnApostar
+            // 
+            this.btnApostar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnApostar.Location = new System.Drawing.Point(3, 28);
+            this.btnApostar.Name = "btnApostar";
+            this.btnApostar.Size = new System.Drawing.Size(155, 45);
+            this.btnApostar.TabIndex = 0;
+            this.btnApostar.Text = "Apostar Já";
+            this.btnApostar.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.lblValor);
+            this.flowLayoutPanel1.Controls.Add(this.btnApostar);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(161, 76);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Location = new System.Drawing.Point(3, 0);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(155, 25);
+            this.lblValor.TabIndex = 1;
+            this.lblValor.Text = "Valor da aposta:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -80,6 +129,10 @@
             this.Text = "Euromilhoes";
             this.flowMain.ResumeLayout(false);
             this.flowMain.PerformLayout();
+            this.flowOptions.ResumeLayout(false);
+            this.flowOptions.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,6 +230,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowMain;
         private System.Windows.Forms.FlowLayoutPanel flowUp;
         private System.Windows.Forms.FlowLayoutPanel flowDown;
+        private System.Windows.Forms.FlowLayoutPanel flowOptions;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Button btnApostar;
     }
 }
 
