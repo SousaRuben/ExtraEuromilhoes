@@ -47,7 +47,7 @@ namespace ExtraEuroMilhoes
         private void BtnPrincipal_Click(object sender, EventArgs e)
         {
             EuroButton btn = sender as EuroButton;
-            Principais Container = (Principais) btn.Parent;
+            var Container = btn.Parent;
             Aposta aposta = (Aposta)Container.Parent;
 
             int value;

@@ -51,9 +51,6 @@
     <Compile Include="Aposta.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Principais.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="EuroButton.cs">
       <SubType>Component</SubType>
     </Compile>

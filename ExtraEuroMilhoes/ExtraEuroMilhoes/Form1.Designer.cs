@@ -171,9 +171,9 @@
         /// <summary>
         /// Cria um container com os 50 numeros principais
         /// </summary>
-        private ExtraEuroMilhoes.Principais ContainerPrincipais()
+        private System.Windows.Forms.TableLayoutPanel ContainerPrincipais()
         {
-            var Container = new ExtraEuroMilhoes.Principais();
+            var Container = new System.Windows.Forms.TableLayoutPanel();
             Container.ColumnCount = 6;
             Container.AutoSize = true;
 
@@ -198,9 +198,9 @@
         /// <summary>
         /// Cria um container com as estrelas da sorte
         /// </summary>
-        private ExtraEuroMilhoes.Principais ContainerEstrelas()
+        private System.Windows.Forms.TableLayoutPanel ContainerEstrelas()
         {
-            var Container = new ExtraEuroMilhoes.Principais();
+            var Container = new System.Windows.Forms.TableLayoutPanel();
             Container.ColumnCount = 3;
             Container.AutoSize = true;
 
