@@ -28,22 +28,28 @@ namespace ExtraEuroMilhoes
             lblValor.Text = $"Valor total da aposta: {value}";
         }
 
-        private void calcularAposta(Aposta container)
+        private void calcularAposta(Principais container)
         {
-            if(container.Count == 5)
-            {
-                displayTotal(container.Price);
-            }
+ 
         }
 
         private void BtnPrincipal_Click(object sender, EventArgs e)
         {
             EuroButton btn = sender as EuroButton;
-            btn.Selected = !btn.Selected;
-            Aposta Container = (Aposta) btn.Parent;
-            calcularAposta(Container);
+            Principais Container = (Principais) btn.Parent;
+            Aposta aposta = (Aposta)Container.Parent;
 
-            //Debug.WriteLine($"Click {btn.Name} inside {Container.Name}");
+            int value = 0;
+            int.TryParse(btn.Text, out value);
+            btn.Selected = !btn.Selected;
+
+            if (btn.Selected)
+            {
+                aposta.Principais.Add(value);
+                return;
+            }
+
+            aposta.Principais.Remove(value);
         }
 
         private void BtnEstrela_Click(object sender, EventArgs e)
@@ -52,6 +58,14 @@ namespace ExtraEuroMilhoes
             btn.Selected = !btn.Selected;
             var Container = btn.Parent.Parent;
             //Debug.WriteLine($"Click {btn.Name} inside {Container.Name}");
+        }
+
+        private void btnApostar_Click(object sender, EventArgs e)
+        {
+            foreach (Aposta item in this.flowUp.Controls)
+            {
+                Debug.WriteLine(item.Principais.Count);
+            }
         }
     }
 }

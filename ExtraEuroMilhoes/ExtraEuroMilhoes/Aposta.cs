@@ -7,40 +7,10 @@ using System.Windows.Forms;
 
 namespace ExtraEuroMilhoes
 {
-    class Aposta : TableLayoutPanel
+    class Aposta : FlowLayoutPanel
     {
-        private int count = 0;
         private float price = 0;
-
-        public float Price
-        {
-            get
-            {
-                price = (float)(count * 0.50);
-                return price;
-            }
-            set
-            {
-                price = value;
-            }
-        }
-
-        public int Count 
-        { 
-            get 
-            {
-                count = 0;
-                foreach (EuroButton button in this.Controls) 
-                {
-                    if (button.Selected) count++;
-                }
-                return count; 
-            }
-            set
-            {
-                count = value;
-            }
-        }
-
+        public List<int> Principais { get; set; } = new List<int>();
+        public List<int> Estrelas { get; set; } = new List<int>();
     }
 }

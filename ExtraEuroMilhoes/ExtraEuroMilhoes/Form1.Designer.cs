@@ -33,9 +33,9 @@
             this.flowUp = new System.Windows.Forms.FlowLayoutPanel();
             this.flowDown = new System.Windows.Forms.FlowLayoutPanel();
             this.flowOptions = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnApostar = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblValor = new System.Windows.Forms.Label();
+            this.btnApostar = new System.Windows.Forms.Button();
             this.flowMain.SuspendLayout();
             this.flowOptions.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -85,16 +85,6 @@
             this.flowOptions.Size = new System.Drawing.Size(803, 82);
             this.flowOptions.TabIndex = 2;
             // 
-            // btnApostar
-            // 
-            this.btnApostar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnApostar.Location = new System.Drawing.Point(3, 28);
-            this.btnApostar.Name = "btnApostar";
-            this.btnApostar.Size = new System.Drawing.Size(155, 45);
-            this.btnApostar.TabIndex = 0;
-            this.btnApostar.Text = "Apostar Já";
-            this.btnApostar.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
@@ -115,6 +105,17 @@
             this.lblValor.Size = new System.Drawing.Size(155, 25);
             this.lblValor.TabIndex = 1;
             this.lblValor.Text = "Valor da aposta:";
+            // 
+            // btnApostar
+            // 
+            this.btnApostar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnApostar.Location = new System.Drawing.Point(3, 28);
+            this.btnApostar.Name = "btnApostar";
+            this.btnApostar.Size = new System.Drawing.Size(155, 45);
+            this.btnApostar.TabIndex = 0;
+            this.btnApostar.Text = "Apostar Já";
+            this.btnApostar.UseVisualStyleBackColor = true;
+            this.btnApostar.Click += new System.EventHandler(this.btnApostar_Click);
             // 
             // Form1
             // 
@@ -147,7 +148,7 @@
         {
             for(int i = 1; i <= 5; i++)
             {
-                var Container = new System.Windows.Forms.FlowLayoutPanel();
+                var Container = new ExtraEuroMilhoes.Aposta();
                 Container.Name = $"Container{i}";
                 Container.AutoSize = true;
 
@@ -170,9 +171,9 @@
         /// <summary>
         /// Cria um container com os 50 numeros principais
         /// </summary>
-        private ExtraEuroMilhoes.Aposta ContainerPrincipais()
+        private ExtraEuroMilhoes.Principais ContainerPrincipais()
         {
-            var Container = new ExtraEuroMilhoes.Aposta();
+            var Container = new ExtraEuroMilhoes.Principais();
             Container.ColumnCount = 6;
             Container.AutoSize = true;
 
@@ -197,9 +198,9 @@
         /// <summary>
         /// Cria um container com as estrelas da sorte
         /// </summary>
-        private ExtraEuroMilhoes.Aposta ContainerEstrelas()
+        private ExtraEuroMilhoes.Principais ContainerEstrelas()
         {
-            var Container = new ExtraEuroMilhoes.Aposta();
+            var Container = new ExtraEuroMilhoes.Principais();
             Container.ColumnCount = 3;
             Container.AutoSize = true;
 
