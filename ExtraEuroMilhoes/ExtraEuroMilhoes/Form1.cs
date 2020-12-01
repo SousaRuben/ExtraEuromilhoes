@@ -22,14 +22,16 @@ namespace ExtraEuroMilhoes
 
         private void BtnPrincipal_Click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
+            EuroButton btn = sender as EuroButton;
+            btn.Selected = !btn.Selected;
             var Container = btn.Parent.Parent;
             Debug.WriteLine($"Click {btn.Name} inside {Container.Name}");
         }
 
         private void BtnEstrela_Click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
+            EuroButton btn = sender as EuroButton;
+            btn.Selected = !btn.Selected;
             var Container = btn.Parent.Parent;
             Debug.WriteLine($"Click {btn.Name} inside {Container.Name}");
         }

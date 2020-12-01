@@ -97,10 +97,9 @@
                 var Container = new System.Windows.Forms.FlowLayoutPanel();
                 Container.Name = $"Container{i}";
                 Container.AutoSize = true;
-                Container.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                
-                Container.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 
+                Container.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                Container.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 
                 var Principais = ContainerPrincipais();
                 Principais.Name = $"ContainerPrincipais{i}";
@@ -126,7 +125,7 @@
 
             for(int i = 1; i <= 50; i++)
             {
-                var Button = new System.Windows.Forms.Button();
+                var Button = new ExtraEuroMilhoes.EuroButton();
                 Button.Name = $"btnPrincipal{i}";
                 Button.Text = $"{i}";
                 Button.Width = 30;
@@ -153,7 +152,7 @@
 
             for (int i = 1; i <= 12; i++)
             {
-                var Button = new System.Windows.Forms.Button();
+                var Button = new ExtraEuroMilhoes.EuroButton();
                 Button.Name = $"btnEstrela{i}";
                 Button.Text = $"{i}";
 
