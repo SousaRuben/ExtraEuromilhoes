@@ -42,15 +42,16 @@ namespace ExtraEuroMilhoes
             {
                 total += aposta.price;
             }
-            displayTotal(total);
 
+            total = (btnAmbos.Checked) ? total * 2 : total; 
+            displayTotal(total);
             return total;
         }
 
         private void calcularAposta(Aposta aposta)
         {
             float preco = aposta.calcularPreco();
-            if (preco > 0) calcularTotal();
+            calcularTotal();
         }
 
         private void saveOnFile()
@@ -79,6 +80,11 @@ namespace ExtraEuroMilhoes
             
             string jsonString = JsonSerializer.Serialize(recibo, options);
             File.WriteAllText(path, jsonString);
+        }
+
+        private void setSorteio(object sender, EventArgs e)
+        {
+            calcularTotal();
         }
 
         private void BtnPrincipal_Click(object sender, EventArgs e)
