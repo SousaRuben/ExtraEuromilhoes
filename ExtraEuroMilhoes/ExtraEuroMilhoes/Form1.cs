@@ -28,10 +28,20 @@ namespace ExtraEuroMilhoes
             lblValor.Text = $"Valor total da aposta: {value}";
         }
 
+        private void calcularTotal()
+        {
+            total = 0;
+            foreach (Aposta aposta in flowUp.Controls)
+            {
+                total += aposta.price;
+            }
+            displayTotal(total);
+        }
+
         private void calcularAposta(Aposta aposta)
         {
             float preco = aposta.calcularPreco();
-            displayTotal(preco);
+            if (preco > 0) calcularTotal();
         }
 
         private void BtnPrincipal_Click(object sender, EventArgs e)
